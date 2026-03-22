@@ -1,0 +1,273 @@
+/* ============================================================
+   GUEDE'S — Estilos Globais
+   Arquivo: css/style.css
+   ============================================================ */
+
+/* ── RESET E BASE ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #F4EFE4;
+  font-family: 'Syne', sans-serif;
+  overflow-x: hidden;
+  color: #1C1510;
+}
+
+/* ── TIPOGRAFIA ───────────────────────────────────────────── */
+/* Bebas Neue: títulos grandes e display */
+.bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+
+/* Syne: corpo, labels e botões */
+.syne  { font-family: 'Syne', sans-serif; }
+
+/* DM Serif: textos longos e citações */
+.serif { font-family: 'DM Serif Display', Georgia, serif; }
+
+/* ── BOTÕES ───────────────────────────────────────────────── */
+
+/* Primário: fundo escuro → vira vermelho no hover */
+.btn-solid {
+  background: #1C1510;
+  color: #FDFAF5;
+  border: none;
+  padding: 14px 30px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-block;
+}
+.btn-solid:hover { background: #CC2B1D; }
+
+/* Secundário: borda escura → inverte no hover */
+.btn-outline {
+  background: transparent;
+  color: #1C1510;
+  border: 2px solid #1C1510;
+  padding: 13px 30px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-block;
+}
+.btn-outline:hover {
+  background: #1C1510;
+  color: #FDFAF5;
+}
+
+/* Ação principal: vermelho (WhatsApp, pedir) */
+.btn-red {
+  background: #CC2B1D;
+  color: #FDFAF5;
+  border: none;
+  padding: 14px 30px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-block;
+}
+.btn-red:hover { background: #9E1F14; }
+
+/* ── LINKS DA NAVEGAÇÃO ───────────────────────────────────── */
+.nav-link {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7A6E62;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-link:hover { color: #1C1510; }
+
+/* ── LABEL DE SEÇÃO ───────────────────────────────────────── */
+/* Pequeno label vermelho com borda esquerda, acima dos títulos */
+.section-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #CC2B1D;
+  border-left: 3px solid #CC2B1D;
+  padding-left: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* ── "G" DECORATIVO DO HERO ───────────────────────────────── */
+/* Grande "G" de fundo — visual ornamental, quase invisível */
+.big-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(100px, 22vw, 240px);
+  line-height: 0.85;
+  color: #EDE7D9; /* mesma cor do fundo: quase invisível */
+  position: absolute;
+  right: -2vw;
+  top: -20px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── ITEM DO CARDÁPIO ─────────────────────────────────────── */
+/* Layout de linha horizontal, estilo menu impresso */
+.menu-item {
+  border-bottom: 1px solid #D4CCBE;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr auto; /* nome à esq, preço à dir */
+  gap: 16px;
+  align-items: start;
+  cursor: pointer;
+  transition: padding 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.menu-item:hover            { padding-left: 8px; }
+.menu-item:hover .item-nome { color: #CC2B1D; }
+.item-nome                  { transition: color 0.15s; }
+
+/* ── ABAS DO CARDÁPIO ─────────────────────────────────────── */
+.tab-pill {
+  background: none;
+  border: 1.5px solid #D4CCBE;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+  color: #7A6E62;
+}
+.tab-pill.active              { background: #1C1510; border-color: #1C1510; color: #FDFAF5; }
+.tab-pill:hover:not(.active)  { border-color: #1C1510; color: #1C1510; }
+
+/* ── CAMPO DE BUSCA ───────────────────────────────────────── */
+/* Só borda inferior visível — estilo minimalista editorial */
+.search-raw {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #1C1510;
+  background: transparent;
+  padding: 12px 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1C1510;
+  outline: none;
+}
+.search-raw::placeholder { color: #7A6E62; font-weight: 400; }
+
+/* ── CARD DE AVALIAÇÃO ────────────────────────────────────── */
+.av-card {
+  border: 1.5px solid #D4CCBE;
+  padding: 28px;
+  background: #FDFAF5;
+  transition: border-color 0.2s;
+}
+.av-card:hover { border-color: #1C1510; }
+
+/* ── CARIMBO DE FIDELIDADE ────────────────────────────────── */
+/* Rotacionado levemente para parecer impresso à mão */
+.stamp {
+  display: inline-block;
+  border: 3px solid #CC2B1D;
+  padding: 4px 14px;
+  transform: rotate(-2deg);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: #CC2B1D;
+}
+
+/* ── BOTÃO FLUTUANTE DO WHATSAPP ──────────────────────────── */
+/* Fixo no canto inferior direito, sombra deslocada estilo editorial */
+.wpp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #1a9d4e;
+  transition: all 0.15s;
+}
+.wpp-float:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1a9d4e;
+}
+
+/* ── MARQUEE (faixa de texto rolando) ─────────────────────── */
+/* Animação CSS pura. Conteúdo duplicado para loop perfeito. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 18s linear infinite;
+  display: flex;
+  white-space: nowrap;
+}
+
+/* ── CARROSSEL DE AVALIAÇÕES ──────────────────────────────── */
+/* Scroll horizontal automático. Pausa no hover. */
+@keyframes av-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.av-track {
+  display: flex;
+  gap: 16px;
+  animation: av-scroll 28s linear infinite;
+  width: max-content;
+}
+.av-track:hover { animation-play-state: paused; }
+
+/* Container com gradiente nas bordas para suavizar entrada/saída */
+.av-outer { overflow: hidden; position: relative; }
+.av-outer::before,
+.av-outer::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.av-outer::before { left: 0;  background: linear-gradient(to right, #1C1510, transparent); }
+.av-outer::after  { right: 0; background: linear-gradient(to left,  #1C1510, transparent); }
+
+/* ── ANIMAÇÃO DE ENTRADA (Reveal) ─────────────────────────── */
+/* Aplicada via React quando o elemento entra na viewport */
+.reveal-hidden  { opacity: 0; transform: translateY(28px); }
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
