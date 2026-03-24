@@ -356,7 +356,7 @@ function App() {
       <div className="hero">
         <Reveal>
           <div style={{ position: "relative" }}>
-            <span className="hero-bg-letter">G</span>
+            <span className="hero-bg-letter">GUEDES</span>
             <div style={{ position: "relative", zIndex: 1 }}>
               <span className="section-label">Desde quando Periperi tem fome</span>
               <h1 className="hero-title">
