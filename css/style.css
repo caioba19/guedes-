@@ -462,7 +462,14 @@ a     { color: inherit; }
 }
 .menu-item:hover { padding-left: 6px; }
 .menu-item:hover .item-nome { color: #CC2B1D; }
-.item-nome { transition: color 0.15s; }
+.item-nome {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-bottom: 3px;
+  transition: color 0.15s;
+}
 
 /* ── HORÁRIO ──────────────────────────────────────────────── */
 .horario-section { padding: 60px 20px; }
